@@ -1,13 +1,16 @@
-const condition = true; 
+const condition = true;
+const myPromise = new Promise((resolve) => {
+    setTimeout(() => resolve('Success after 2 seconds!'), 2000);
+});
 
-const myPromise = new Promise((resolve, reject) => { 
-  if (condition) { 
-    resolve('Success!'); 
-  } else { 
-    reject('Failure!'); 
+async function myFunction() { 
+  try { 
+    console.log("Waiting for promise...");
+    const result = await myPromise; 
+    console.log("Async result:", result); 
+  } catch (error) { 
+    console.log("Error:", error); 
   } 
-}); 
+} 
 
-myPromise
-  .then((result) => console.log("Promise Resolved:", result))
-  .catch((error) => console.log("Promise Rejected:", error));
+myFunction();
