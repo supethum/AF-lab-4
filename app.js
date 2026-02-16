@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 const fs = require('fs'); 
 fs.readFile('file.txt', 'utf8', function (err, data) { 
 if (err) throw err; 
@@ -37,28 +35,3 @@ https.get('https://jsonplaceholder.typicode.com/posts/1', (resp) => {
 const myModule = require('./my-module.js'); 
 console.log(myModule.myFunction()); 
 
-const myPromise = new Promise((resolve, reject) => { 
-  if (condition) { 
-    resolve('Success!'); 
-  } else { 
-    reject('Failure!'); 
-  } 
-}); 
- 
-myPromise.then((result) => { 
-  console.log(result); 
-}).catch((error) => { 
-  console.log(error); 
-}); 
-
-async function myFunction() { 
-  try { 
-    const result = await myPromise; 
-    console.log(result); 
-  } catch (error) { 
-    console.log(error); 
-  } 
-} 
- 
-myFunction(); 
->>>>>>> Stashed changes
